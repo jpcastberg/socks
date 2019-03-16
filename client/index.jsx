@@ -1,11 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './styles.css';
 
-const App = () => {
-  return (
-    <div>Get ready to code!!</div>
-  );
-};
+import App from './components/App.jsx';
 
 ReactDOM.render(<App />, document.getElementById('app'));
