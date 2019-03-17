@@ -8,7 +8,7 @@ const users = require('./routes/api/users');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, './client/public')));
 
 // Bodyparser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,7 +30,7 @@ require('./config/passport')(passport);
 app.use('/api/users', users);
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'), (err) => {
+  res.sendFile(path.join(__dirname, '/client/public/index.html'), (err) => {
     if (err) res.status(500).send(err);
   });
 });

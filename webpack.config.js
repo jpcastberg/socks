@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   context: path.join(__dirname, '/client'),
-  entry: './index.jsx',
+  entry: './src/index.jsx',
   module: {
     rules: [
       {
@@ -18,7 +18,7 @@ module.exports = {
     ],
   },
   output: {
-    path: path.join(__dirname, '/public'),
+    path: path.join(__dirname, '/client/public'),
     filename: 'bundle.js',
   },
 };
