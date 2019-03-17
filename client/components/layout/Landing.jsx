@@ -1,5 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Landing extends Component {
   render() {
@@ -17,27 +18,31 @@ class Landing extends Component {
               passport and JWTs
             </p>
             <br />
-            <a
-              style={{
-                width: '150px',
-                borderRadius: '3px',
-                letterSpacing: '1.5px'
-              }}
-              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-            >
-              Register
-            </a>
-            <a
-              style={{
-                marginLeft: '2rem',
-                width: '150px',
-                borderRadius: '3px',
-                letterSpacing: '1.5px'
-              }}
-              className="btn btn-large waves-effect white hoverable black-text"
-            >
-              Log In
-            </a>
+            <Link to="/register">
+              <span
+                style={{
+                  width: '150px',
+                  borderRadius: '3px',
+                  letterSpacing: '1.5px'
+                }}
+                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+              >
+                Register
+              </span>
+            </Link>
+            <Link to="/login">
+              <span
+                style={{
+                  marginLeft: '2rem',
+                  width: '150px',
+                  borderRadius: '3px',
+                  letterSpacing: '1.5px',
+                }}
+                className="btn btn-large waves-effect white hoverable black-text"
+              >
+                Log In
+              </span>
+            </Link>
           </div>
         </div>
       </div>

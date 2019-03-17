@@ -29,6 +29,12 @@ require('./config/passport')(passport);
 // Routes
 app.use('/api/users', users);
 
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'), (err) => {
+    if (err) res.status(500).send(err);
+  });
+});
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`Server up and running on port ${port}!`));
