@@ -16,6 +16,19 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
+  socks: [{
+    id: String,
+    brand: String,
+    color: String,
+    description: String,
+    image: String,
+    lastWorn: Date,
+  }],
+  sockHistory: [{
+    date: Date,
+    left: Object,
+    right: Object,
+  }],
   date: {
     type: Date,
     default: Date.now,
