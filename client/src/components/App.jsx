@@ -12,9 +12,10 @@ import Navbar from './layout/Navbar.jsx';
 import Landing from './layout/Landing.jsx';
 import Register from './auth/Register.jsx';
 import Login from './auth/Login.jsx';
-import store from '../store.js';
 import PrivateRoute from './private-route/PrivateRoute.jsx';
 import Dashboard from './dashboard/Dashboard.jsx';
+import TodaysSocks from './user-pages/TodaysSocks.jsx';
+import store from '../store.js';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -47,6 +48,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/todayssocks" component={TodaysSocks} />
             </Switch>
           </div>
         </Router>
