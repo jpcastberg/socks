@@ -4,6 +4,7 @@ const passport = require('passport');
 const path = require('path');
 
 const users = require('./routes/api/users');
+const socks = require('./routes/api/socks');
 require('./db/database.js');
 
 const app = express();
@@ -20,6 +21,13 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 // Routes
 app.use('/api/users', users);
+app.use('/api/socks', socks);
+
+app.get('/bundle.js', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/public/bundle.js'), (err) => {
+    if (err) res.status(500).send(err);
+  });
+});
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '/client/public/index.html'), (err) => {

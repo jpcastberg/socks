@@ -1,8 +1,7 @@
 /* eslint-disable no-param-reassign */
 const nodeSchedule = require('node-schedule');
-const moment = require('moment');
 
-const users = require('../models/User.js');
+const User = require('../models/User.js');
 require('./database.js');
 
 const recurrenceRule = new nodeSchedule.RecurrenceRule();
@@ -44,14 +43,14 @@ const getRandomPairOfSocks = (socks) => {
 };
 
 module.exports = nodeSchedule.scheduleJob(recurrenceRule, () => {
-  users.find({})
+  User.find({})
     .then((userList) => {
       userList.forEach((user) => {
         const { email } = user;
         const todaysSocks = getRandomPairOfSocks(user.socks);
         user.sockHistory.push(todaysSocks);
         console.log(user);
-        users.findOneAndUpdate({ email }, user, (err) => {
+        User.findOneAndUpdate({ email }, user, (err) => {
           if (err) throw new Error(err);
         });
       });
@@ -64,13 +63,13 @@ module.exports = nodeSchedule.scheduleJob(recurrenceRule, () => {
 // Use below function to reset all user's socks and sock history
 
 // nodeSchedule.scheduleJob(recurrenceRule, () => {
-//   users.find({})
+//   User.find({})
 //     .then((userList) => {
 //       userList.forEach((user) => {
 //         const { email } = user;
 //         user.sockHistory = [];
 //         user.socks = [];
-//         users.findOneAndUpdate({ email }, user, (err) => {
+//         User.findOneAndUpdate({ email }, user, (err) => {
 //           if (err) throw new Error(err);
 //         });
 //       });
