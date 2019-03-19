@@ -22,7 +22,7 @@ class Login extends Component {
     const { auth, history } = this.props;
     // If logged in and user navigates to Register page, should redirect them to dashboard
     if (auth.isAuthenticated) {
-      history.push('/dashboard');
+      history.push('/todayssocks');
     }
   }
 
@@ -64,12 +64,12 @@ class Login extends Component {
             </Link>
             <div className="col s12" style={{ paddingLeft: '11.250px' }}>
               <h4>
-                <b>Login</b>
+                <b>Login </b>
                 below
               </h4>
               <p className="grey-text text-darken-1">
                 {'Don\'t have an account?'}
-                <Link to="/register">Register</Link>
+                <Link to="/register"> Register</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>

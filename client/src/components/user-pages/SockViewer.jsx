@@ -4,7 +4,7 @@ const SockViewer = (props) => {
   const image = () => {
     if (props.sock.image) {
       return (
-        <img style={{ width: '25%' }} src={props.sock.image} alt=""/>
+        <img style={{ width: '100px' }} src={props.sock.image} alt=""/>
       );
     }
     return (
@@ -36,7 +36,7 @@ const SockViewer = (props) => {
 };
 
 SockViewer.defaultProps = {
-  foot: 'no foot',
+  foot: '',
   sock: {},
 };
 

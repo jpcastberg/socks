@@ -17,17 +17,8 @@ class Navbar extends Component {
             >
               Home
             </Link>
-            <br />
-            <Link
-              to="/todayssocks"
-              style={{
-                fontFamily: 'monospace',
-              }}
-              className="col s5 brand-logo center black-text"
-            >
-              Today's Socks
-            </Link>
-              <br/>
+          </div>
+          <div className="nav-wrapper white">
             <Link
               to="/mysocks"
               style={{

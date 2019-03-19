@@ -55,15 +55,14 @@ class MySocks extends Component {
             </h4>
             <br/>
             <br/>
-            {sockElements}
+            {sockElements.length > 0 ? sockElements : (<p>Oops! There are no socks to display!!</p>)}
             <br/>
             <Link
               to="/addasock"
               style={{
                 fontFamily: 'monospace',
-                position: 'relative',
               }}
-              className="col s5 brand-logo center black-text"
+              className="btn btn-large waves-effect waves-light hoverable accent-3"
             >
               Add A Sock
             </Link>

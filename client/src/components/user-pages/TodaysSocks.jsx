@@ -52,7 +52,7 @@ class TodaysSocks extends Component {
     const { auth } = this.props;
     const { user } = auth;
     return (
-      <div style={{ height: '75vh', marginTop: '10%' }} className="container valign-wrapper">
+      <div style={{ height: '75vh' }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
             <h4>

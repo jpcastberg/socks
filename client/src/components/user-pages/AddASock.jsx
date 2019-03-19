@@ -39,6 +39,13 @@ class AddASock extends Component {
         'Content-Type': 'application/json',
       },
       body,
+    }).then(() => {
+      this.setState({
+        brand: '',
+        color: '',
+        description: '',
+        image: '',
+      });
     });
   }
 
@@ -63,6 +70,7 @@ class AddASock extends Component {
               <a href="https://imgur.com/upload" target="_blank"> Imgur </a>
               to upload an image, then paste the link here!^^
             </p>
+            {/* {<input type="file" name="pic" accept="image/*" />} */}
             <button
               style={{
                 width: '150px',
