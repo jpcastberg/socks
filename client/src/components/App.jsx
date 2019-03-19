@@ -15,6 +15,8 @@ import Login from './auth/Login.jsx';
 import PrivateRoute from './private-route/PrivateRoute.jsx';
 import Dashboard from './dashboard/Dashboard.jsx';
 import TodaysSocks from './user-pages/TodaysSocks.jsx';
+import MySocks from './user-pages/MySocks.jsx';
+import AddASock from './user-pages/AddASock.jsx';
 import store from '../store.js';
 
 // Check for token to keep user logged in
@@ -49,6 +51,8 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/todayssocks" component={TodaysSocks} />
+              <PrivateRoute exact path="/mysocks" component={MySocks} />
+              <PrivateRoute exact path="/addasock" component={AddASock} />
             </Switch>
           </div>
         </Router>

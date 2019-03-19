@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class Navbar extends Component {
   render() {
     return (
-      <div className="navbar-fixed">
+      <div style={{ marginBottom: '20%' }} className="navbar-fixed">
         <nav className="z-depth-0">
           <div className="nav-wrapper white">
             <Link
@@ -26,6 +26,16 @@ class Navbar extends Component {
               className="col s5 brand-logo center black-text"
             >
               Today's Socks
+            </Link>
+              <br/>
+            <Link
+              to="/mysocks"
+              style={{
+                fontFamily: 'monospace',
+              }}
+              className="col s5 brand-logo center black-text"
+            >
+              My Socks
             </Link>
           </div>
         </nav>

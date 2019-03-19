@@ -12,9 +12,17 @@ const SockViewer = (props) => {
     );
   };
 
+  const foot = () => {
+    if (props.foot) {
+      return (
+        <b>{`${props.foot}:`}</b>
+      );
+    }
+  };
+
   return (
     <div>
-      {`${props.foot}:`}
+      {foot()}
       <br/>
       {props.sock.brand}
       <br/>
@@ -30,6 +38,6 @@ const SockViewer = (props) => {
 SockViewer.defaultProps = {
   foot: 'no foot',
   sock: {},
-}
+};
 
 export default SockViewer;

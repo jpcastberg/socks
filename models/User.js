@@ -17,12 +17,10 @@ const UserSchema = new Schema({
     required: true,
   },
   socks: [{
-    id: String,
     brand: String,
     color: String,
     description: String,
     image: String,
-    lastWorn: Date,
   }],
   sockHistory: [{
     date: Date,
